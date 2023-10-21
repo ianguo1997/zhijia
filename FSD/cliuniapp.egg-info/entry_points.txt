@@ -1,0 +1,2 @@
+[console_scripts]
+cli_uni_app = cliuniapp.main:cli
