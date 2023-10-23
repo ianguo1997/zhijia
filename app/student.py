@@ -307,7 +307,7 @@ class Admin(User):
             # 读取现有的数据文件
             with open(STUDENT_DB, "r") as file:
                 content = file.read()
-                if content:
+                if content!='[]':
                     students_list = ast.literal_eval(content)
                     # 检查学生是否已经注册
                     print("\033[93m{}\033[0m".format(f'{"":8}Grade Grouping'))
@@ -329,7 +329,7 @@ class Admin(User):
                             print(f'{"":8}{st_gd} --> [{st_name} :: {st_id} --> GRADE: {st_gd} - MARK: {st_mk}]')
 
                 else:
-                    students_list = []
+                   print(f'{"":16}< Nothing to Display >')
 
         except FileNotFoundError:
             print("Students data file not found.")
@@ -345,7 +345,7 @@ class Admin(User):
             # 读取现有的数据文件
             with open(STUDENT_DB, "r") as file:
                 content = file.read()
-                if content:
+                if content!='[]':
                     students_list = ast.literal_eval(content)
                     # 检查学生是否已经注册
                     print("\033[93m{}\033[0m".format(f'{"":8}PASS/FILE Partition'))
@@ -378,7 +378,7 @@ class Admin(User):
                     print(f'{"":8}PASS --> [{pass_result}]')
 
                 else:
-                    students_list = []
+                    print(f'{"":16}< Nothing to Display >')
 
         except FileNotFoundError:
             print("Students data file not found.")
